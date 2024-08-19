@@ -161,6 +161,21 @@ ament_target_dependencies(pick_place
 	moveit_ros_planning
 	control_msgs)
 
+add_executable(pick_place2
+    src/pick_place2.cpp)
+target_include_directories(pick_place2
+    PUBLIC include)
+ament_target_dependencies(pick_place2
+    ament_cmake
+	rclcpp
+	rclcpp_action
+	moveit_core
+	moveit_ros_planning_interface
+	interactive_markers
+	moveit_ros_planning
+	control_msgs)
+
+
 install(TARGETS 
 	test_trajectory
 	test_trajectory2
@@ -171,6 +186,7 @@ install(TARGETS
 	draw_x
 	test_kinematics_plugin
 	pick_place
+	pick_place2
     DESTINATION lib/${PROJECT_NAME}
 )
 
